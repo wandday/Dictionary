@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+	{% load static %}
+
+  <meta charset="UTF-8">
+  <title>CodePen - Search Box - pure html and css</title>
+  <link  href='{% static "https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" %}' rel="stylesheet">
+<link  href='{% static "./style.css" %}' rel="stylesheet">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<link href='{% static "https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet" %}'>
+<link href='{% static "https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" %}'>
+
+<main>
+	<h1 style="color: white;">Search Word in Dictionary</h1>
+	
+	<form action="word_search">
+		<div class="SearchBox">
+		
+			<input type="text" class="SearchBox-input" name="word" placeholder="Type to search..." required>
+		
+				<button class="SearchBox-button" type="submit">
+					<i class="SearchBox-icon  material-icons">search</i>
+				</button>
+
+		</div>
+
+	</form>
+
+	<p style="text-align: center;">
+		<ul style="color: white;">
+			<li> <h1> Word:  {{ search_result.words | title }} </h1> </li> <br>
+            <div style="max-width:900px; word-wrap:break-word;">
+			<li> <h3> Meaning: {{ search_result.word_meaning }} </h3> </li> <br> 
+			
+			<li> Synonyms: {% for content in synonym %} <a style="text-decoration: none; color: yellow;" href="/word_search?word={{content}}" > {{content}} </a>, {% endfor %} </li><br>
+            <li> Antonyms: {% for content in antonym %} <a style="text-decoration: none; color: yellow;" href="/word_search?word={{content}}"> {{content}} </a>, {% endfor %} </li> <br>
+			</div>
+			<h3 style="text-align: center;" ><a style="text-decoration: none; color: lightblue;" href="/"> Back To Home</a></h3>
+		</ul>
+	</p>
+
+</main>
+<!-- partial -->
+  
+</body>
+</html>

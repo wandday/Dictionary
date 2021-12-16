@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+	{% load static %}
+
+  <meta charset="UTF-8">
+  <title>CodePen - Search Box - pure html and css</title>
+  <link  href='{% static "https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" %}' rel="stylesheet">
+<link  href='{% static "./style.css" %}' rel="stylesheet">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<link href='{% static "https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet" %}'>
+<link href='{% static "https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" %}'>
+
+<main>
+	<h1 style="color: white;">Search Word in Dictionary</h1>
+	
+	<form action="word_search">
+		<div class="SearchBox">
+		
+			<input type="text" class="SearchBox-input" name="word" placeholder="Type to search..." required >
+		
+				<button class="SearchBox-button" type="submit">
+					<i class="SearchBox-icon  material-icons">search</i>
+				</button>
+	</form>
+		
+	</div>
+	
+</main>
+<!-- partial -->
+  
+</body>
+</html>
